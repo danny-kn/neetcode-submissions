@@ -1,0 +1,40 @@
+// class Solution {
+//     public int[] replaceElements(int[] arr) {
+//         int[] ans = new int[arr.length];
+//         for (int i = 0; i < arr.length; i++) {
+//             int maxVal = -1;
+//             for (int j = i + 1; j < arr.length; j++) {
+//                 maxVal = Math.max(arr[j], maxVal);
+//             }
+//             ans[i] = maxVal;
+//         }
+//         return ans;
+//     }
+// }
+
+class Solution {
+    public int[] replaceElements(int[] arr) {
+        int n = arr.length;
+        int[] ans = new int[n];
+        for (int i = 0; i < n; i++) {
+            int maxVal = -1;
+            for (int j = i + 1; j < n; j++) {
+                maxVal = Math.max(arr[j], maxVal);
+            }
+            ans[i] = maxVal;
+        }
+        return ans;
+    }
+}
+
+// class Solution {
+//     public int[] replaceElements(int[] arr) {
+//         int[] ans = new int[arr.length];
+//         int maxVal = -1;
+//         for (int i = arr.length - 1; i >= 0; i--) {
+//             ans[i] = maxVal;
+//             maxVal = Math.max(arr[i], maxVal);
+//         }
+//         return ans;
+//     }
+// }
